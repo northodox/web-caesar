@@ -15,23 +15,24 @@ form = """
                     width: 540px;
                     font: 16px sans-serif;
                     border-radius: 10px;
-                    }
+                }
                 textarea {
                     margin: 10px;
                     width: 540px;
                     height: 120px;
-                    }
+                }
             </style>
         </head>
         
         <body>
             <form method="post">
-                <input type="text" name="rot"/>
-                <textarea name="text">
-                    <label>
+                <input type="text" name="rot" value=0 />
+                <label>
                         Rotation Amount
-                    </label>
+                </label>
+                <textarea name="text">
                 </textarea>
+                <input type="submit"/>
             </form>
         </body>
     </html>
