@@ -29,11 +29,9 @@ form = """
             <form method="post">
                 <input type="text" name="rot" value=0 />
                 <label>
-                        Rotation Amount
+                    Rotation Amount
                 </label>
-                <textarea name="text">
-                {0}
-                </textarea>
+                <textarea name="text">{0}</textarea>
                 <input type="submit"/>
             </form>
         </body>
@@ -41,12 +39,12 @@ form = """
 </form>
 """
 
-@app.route("/", methods = ['POST'])
+@app.route("/", methods=['POST'])
 def encrypt():
-    text = request.form['text']
+    text = str(request.form['text'])
     rot = int(request.form['rot'])
-    content = '<h1>' + rotate_string(text, rot) + '<h1>'
-    return form.format(content)
+    content = rotate_string(text, rot) 
+    return "<h1>" + form.format(content) + "</h1>"
 
 @app.route("/")
 def index():
